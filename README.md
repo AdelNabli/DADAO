@@ -1,2 +1,2 @@
 # DADAO
-Implementation of DADAO: ecoupled Accelerated Decentralized Asynchronous Optimization for Time-Varying Gossips
+Implementation of DADAO: Decoupled Accelerated Decentralized Asynchronous Optimization for Time-Varying Gossips

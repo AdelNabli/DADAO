@@ -1,10 +1,7 @@
 import torch
 import numpy as np
 import scipy
-import pandas as pd
-import seaborn as sns
 import networkx as nx
-import matplotlib.pyplot as plt
 from sklearn import datasets
 from utils import compute_spectral_quantities
 

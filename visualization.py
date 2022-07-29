@@ -245,6 +245,14 @@ def plot_all_losses(
     """
     Plot the evolution of the distance to the true optimal value with the number of gradient and communication
     steps for all methods.
+    
+    Parameters:
+        - n_workers (int): number of workers considered.
+        - x_loss_x (list): evolution of the distance to the true optimal value during training.
+        - graph_type (str): the type of graph considered.
+        - id_max (int): the maximum index considered for the plots.
+        - compression (float): in [0, 100], percentage of data to discard for the plots,
+                               in order to speed up the plotting process.
     """
     loss_list_grad = [
         grad_loss_adom_mc,

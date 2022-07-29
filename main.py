@@ -116,9 +116,9 @@ def get_args_parser():
     )
     parser.add_argument(
         "--graph_type",
-        default='complete',
+        default="complete",
         type=str,
-        help="The type of graph to run the optimizer on to, we support either one of ['star', 'complete', 'cycle', 'path', '2D_grid', 'barbell', 'random_geom']"
+        help="The type of graph to run the optimizer on to, we support either one of ['star', 'complete', 'cycle', 'path', '2D_grid', 'barbell', 'random_geom']",
     )
     parser.add_argument(
         "--n_samples",
@@ -146,6 +146,17 @@ def main(args):
     if args.optimizer_name not in ["ADOMplus", "DADAO", "MSDA", "Continuized"]:
         raise ValueError(
             "We support either one of ['ADOMplus', 'DADAO', 'MSDA', 'Continuized'] optimizer."
+        )
+    if args.optimizer_name in ["MSDA", "Continuized"] and args.classification:
+        raise ValueError(
+            " For MSDA and the Continuized framework, we only support the Linear Regression task."
+        )
+    if (
+        args.optimizer_name in ["MSDA", "Continuized"]
+        and args.graph_type == "random_geom"
+    ):
+        raise ValueError(
+            " For MSDA and the Continuized framework, we do not support time-varying graphs."
         )
     if args.data is None or args.labels is None:
         raise ValueError("A dataset should be given.")
@@ -227,7 +238,7 @@ def main(args):
             X = optimizer.X
         # dual methods
         else:
-            if args.optimizer_name == 'MSDA':
+            if args.optimizer_name == "MSDA":
                 opt_X = optimizer.X
             else:
                 opt_X = optimizer.Y
@@ -246,10 +257,18 @@ def main(args):
             "f_star sklearn : ",
             f_star,
             "        | ",
-            "f(x_bar) method : ",
+            "f(x_bar) %s : " % args.optimizer_name,
             torch.mean(f(args.data, args.labels)).detach(),
         )
-        print("x_star sklearn : ", x_star, " | ", "x_bar method : ", X_bar.numpy())
+        print(
+            "x_star sklearn : ",
+            x_star,
+            " | ",
+            "x_bar %s : " % args.optimizer_name,
+            X_bar.numpy(),
+        )
+
+    return optimizer, loss_list, loss_list_edges
 
 
 if __name__ == "__main__":
@@ -268,7 +287,7 @@ if __name__ == "__main__":
     if args.list_G is None or args.list_W is None:
         # create a sequence of time varying connected graphs
         args.list_G, args.list_W, list_L_norm, args.chi_1, args.chi_2, args.chi = create_K_graphs(
-            args.n_workers, args.graph_type, radius=args.radius, K=50,
+            args.n_workers, args.graph_type, radius=args.radius, K=50
         )
         # compute the right intensity value for the mixing process
         args.lamb_mix = np.sqrt(2 * args.chi_1 * args.chi_2)
@@ -276,4 +295,4 @@ if __name__ == "__main__":
         # gives the right intensity value for the gradient process
         args.lamb_grad = args.n_workers
     # run main
-    main(args)
+    _, _, _ = main(args)

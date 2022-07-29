@@ -43,7 +43,7 @@ def create_data(n_samples, dim, n_workers, classification):
             X, y = datasets.make_regression(n_data, dim, coef=False, noise=10)
             # introduce additional variance in the slopes produced
             coef_slope = np.random.uniform(0.01, 5)
-            y = coef_slope*y
+            y = coef_slope * y
         # convert to torch
         X, y = torch.from_numpy(X).double(), torch.from_numpy(y).double()
         X_all.append(X.unsqueeze(0))
@@ -221,7 +221,7 @@ def generate_one_connected_graph(n, graph_type, radius=None):
 
 def create_K_graphs(n, graph_type, radius=None, K=50):
     """
-    Create 50 graphs.
+    Create K graphs.
     
     Parameters:
         - n (int): the number of nodes in each graph.

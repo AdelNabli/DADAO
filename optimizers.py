@@ -93,6 +93,7 @@ class Optimizer(object):
 class DADAO_optimizer(Optimizer):
     """
     Implementation of our decentralized asynchronous method with decoupled gradient and consensus steps.
+    See ( https://hal.archives-ouvertes.fr/hal-03737694/document ) for more details.
     """
 
     def __init__(

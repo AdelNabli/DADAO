@@ -119,7 +119,7 @@ def run_DADAO(
         else:
             # We change of graph every 1/chi unit of time as in ADOM+
             # with multi-consensus
-            G = list_G[int(list_t_event[k]*chi_1) % len(list_G)]
+            G = list_G[int(list_t_event[k] * chi_1) % len(list_G)]
             # choose an edge uniformly at random among the edges
             # of the connected graph we consider at this time
             edge_ij = np.array(G.edges)[np.random.choice(len(G.edges))]

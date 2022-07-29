@@ -16,6 +16,6 @@ To compare our work to other decentralized optimizers, we also implemented [MSDA
 ## Usages
 Simply run the main scipt, e.g., as follows
 ```bash
-python main.py --optimizer_name 'DADAO' --n_workers 10 --classification False --graph_type 'random_geom' --t_max 200
+python main.py --optimizer_name 'DADAO' --n_workers 10 --classification True --graph_type 'random_geom' --t_max 200
 ```
 We provide examples of how to run the implemented optimizers in our Examples Notebook.

@@ -14,7 +14,7 @@ To compare our work to other decentralized optimizers, we also implemented [MSDA
 * [tqdm](https://tqdm.github.io/)
 
 ## Usages
-Simply run the main scipt, e.g., as follows
+Simply run the main script, e.g., as follows
 ```bash
 python main.py --optimizer_name 'DADAO' --n_workers 10 --classification True --graph_type 'random_geom' --t_max 200
 ```

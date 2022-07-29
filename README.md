@@ -18,7 +18,7 @@ Simply run the main script, e.g., as follows
 ```bash
 python main.py --optimizer_name "DADAO" --n_workers 10 --classification True --graph_type "random_geom" --t_max 200
 ```
-In our Examples Notebook, we provide further examples of how to run the implemented optimizers, along with a small exploration of the datasets and graphs considered.
+In our [Examples Notebook]( https://github.com/AdelNabli/DADAO/blob/main/Examples.ipynb), we provide further examples of how to run the implemented optimizers, along with a small exploration of the datasets and graphs considered.
 
 ## Citation
 ```bibtex

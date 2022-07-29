@@ -352,18 +352,16 @@ def run_continuized(
     # the times of the events is the cumulative sum of the waiting times.
     list_t_event = np.cumsum(wait_times)
     optimizer.times = list_t_event
-    # Initialize the count of communication steps.
-    k_mixing = 0
+    # Initialize the graph (fixed topology)
+    G = list_G[0]
     # initialize the list of losses
     loss_list = []
     loss_list_edges = []
     # play all the events in order of appearance
     for k in trange(len(list_t_event)):
         # choose an edge uniformly at random among the edges
-        # of the connected graph we consider at this time
-        G = list_G[k_mixing % len(list_G)]
+        # of the connected graph we consider
         edge_ij = np.array(G.edges)[np.random.choice(len(G.edges))]
-        k_mixing += 1
         optimizer.step(list_t_event[k], edge_ij)
         # We compute the distance to optimal params every time
         with torch.no_grad():
@@ -440,8 +438,6 @@ def run_MSDA(
     """
 
     optimizer = MSDA_optimizer(data, labels, mu=mu, L=L, G=list_G[0])  # fixed topology
-    # Initialize the count of gradient steps
-    k_mixing = 0
     # initialize the list of losses
     loss_list = []
     loss_list_edges = []
@@ -451,7 +447,6 @@ def run_MSDA(
     n_edges_fired = len(list_G[0].edges) * K_msda
     for k in trange(n_steps):
         optimizer.step()
-        k_mixing += 1
         # We compute the distance to optimal params every time
         with torch.no_grad():
             X = []

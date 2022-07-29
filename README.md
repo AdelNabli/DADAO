@@ -19,3 +19,19 @@ Simply run the main script, e.g., as follows
 python main.py --optimizer_name 'DADAO' --n_workers 10 --classification True --graph_type 'random_geom' --t_max 200
 ```
 We provide examples of how to run the implemented optimizers in our Examples Notebook.
+
+## Citation
+```bibtex
+@unpublished{nabli:hal-03737694,
+  TITLE = {{DADAO: Decoupled Accelerated Decentralized Asynchronous Optimization for Time-Varying Gossips}},
+  AUTHOR = {Nabli, Adel and Oyallon, Edouard},
+  URL = {https://hal.archives-ouvertes.fr/hal-03737694},
+  NOTE = {working paper or preprint},
+  YEAR = {2022},
+  MONTH = Jul,
+  KEYWORDS = {Convex Optimization ; Distributed Algorithms ; Decentralized Methods ; Stochastic Optimization},
+  PDF = {https://hal.archives-ouvertes.fr/hal-03737694/file/main.pdf},
+  HAL_ID = {hal-03737694},
+  HAL_VERSION = {v1},
+}
+```

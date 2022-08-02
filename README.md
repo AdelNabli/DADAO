@@ -1,5 +1,5 @@
 # DADAO
-Implementation of [DADAO: Decoupled Accelerated Decentralized Asynchronous Optimization for Time-Varying Gossips]( https://hal.archives-ouvertes.fr/hal-03737694/document ). \
+Implementation of [DADAO: Decoupled Accelerated Decentralized Asynchronous Optimization for Time-Varying Gossips]( https://arxiv.org/pdf/2208.00779.pdf ). \
 To compare our work to other decentralized optimizers, we also implemented [MSDA](https://arxiv.org/pdf/1702.08704.pdf), [ADOM+](https://openreview.net/attachment?id=L8-54wkift&name=supplementary_material) _(with and without Multi-Consensus)_ and the optimizer described in the [Continuized Framework](https://arxiv.org/pdf/2106.07644.pdf).
 
 ## Requirements
@@ -22,16 +22,12 @@ In our [Examples Notebook]( https://github.com/AdelNabli/DADAO/blob/main/Example
 
 ## Citation
 ```bibtex
-@unpublished{nabli:hal-03737694,
-  TITLE = {{DADAO: Decoupled Accelerated Decentralized Asynchronous Optimization for Time-Varying Gossips}},
-  AUTHOR = {Nabli, Adel and Oyallon, Edouard},
-  URL = {https://hal.archives-ouvertes.fr/hal-03737694},
-  NOTE = {working paper or preprint},
-  YEAR = {2022},
-  MONTH = Jul,
-  KEYWORDS = {Convex Optimization ; Distributed Algorithms ; Decentralized Methods ; Stochastic Optimization},
-  PDF = {https://hal.archives-ouvertes.fr/hal-03737694/file/main.pdf},
-  HAL_ID = {hal-03737694},
-  HAL_VERSION = {v1},
+@misc{nabli2022dadao,
+    title={DADAO: Decoupled Accelerated Decentralized Asynchronous Optimization for Time-Varying Gossips},
+    author={Adel Nabli and Edouard Oyallon},
+    year={2022},
+    eprint={2208.00779},
+    archivePrefix={arXiv},
+    primaryClass={math.OC}
 }
 ```

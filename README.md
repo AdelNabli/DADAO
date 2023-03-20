@@ -23,9 +23,9 @@ In our [Examples Notebook]( https://github.com/AdelNabli/DADAO/blob/main/Example
 ## Citation
 ```bibtex
 @misc{nabli2022dadao,
-    title={DADAO: Decoupled Accelerated Decentralized Asynchronous Optimization for Time-Varying Gossips},
+    title={DADAO: Decoupled Accelerated Decentralized Asynchronous Optimization},
     author={Adel Nabli and Edouard Oyallon},
-    year={2022},
+    year={2023},
     eprint={2208.00779},
     archivePrefix={arXiv},
     primaryClass={math.OC}

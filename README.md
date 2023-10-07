@@ -1,5 +1,5 @@
 # DADAO
-Implementation of [DADAO: Decoupled Accelerated Decentralized Asynchronous Optimization]( https://arxiv.org/pdf/2208.00779.pdf ). \
+Implementation of ICML 2023 paper [DADAO: Decoupled Accelerated Decentralized Asynchronous Optimization](https://proceedings.mlr.press/v202/nabli23a.html). \
 To compare our work to other decentralized optimizers, we also implemented [MSDA](https://arxiv.org/pdf/1702.08704.pdf), [ADOM+](https://openreview.net/attachment?id=L8-54wkift&name=supplementary_material) _(with and without Multi-Consensus)_ and the optimizer described in the [Continuized Framework](https://arxiv.org/pdf/2106.07644.pdf).
 
 ## Requirements
@@ -22,12 +22,18 @@ In our [Examples Notebook]( https://github.com/AdelNabli/DADAO/blob/main/Example
 
 ## Citation
 ```bibtex
-@misc{nabli2022dadao,
-    title={DADAO: Decoupled Accelerated Decentralized Asynchronous Optimization},
-    author={Adel Nabli and Edouard Oyallon},
-    year={2023},
-    eprint={2208.00779},
-    archivePrefix={arXiv},
-    primaryClass={math.OC}
+
+
+@InProceedings{pmlr-v202-nabli23a,
+  title = 	 {{DADAO}: Decoupled Accelerated Decentralized Asynchronous Optimization},
+  author =       {Nabli, Adel and Oyallon, Edouard},
+  booktitle = 	 {Proceedings of the 40th International Conference on Machine Learning},
+  pages = 	 {25604--25626},
+  year = 	 {2023},
+  editor = 	 {Krause, Andreas and Brunskill, Emma and Cho, Kyunghyun and Engelhardt, Barbara and Sabato, Sivan and Scarlett, Jonathan},
+  volume = 	 {202},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {23--29 Jul},
+  publisher =    {PMLR},
 }
 ```
